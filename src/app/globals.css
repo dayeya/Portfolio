@@ -1,13 +1,11 @@
 :root {
-  --background: #E7EDCC; /* f0ead2 */
-  --main-foreground: #6c584c;
-  --second-forground: #adc178;
-  --bamboo-color: #87b465;
+  --background: #fdf6d3; /* f0ead2 */
+  --main-foreground: #3E2723;
+  --project-bg: #C1E2A4;
 
   --special-f: 'Fira code';  
   --main-font: 'Roboto', sans-serif;
   --main-ff-color: #6c584c;
-  --text-stroke: #6c584c;
 }
 
 html,
@@ -19,6 +17,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
+  overflow-y: scroll;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

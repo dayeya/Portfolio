@@ -1,9 +1,10 @@
-import styles from "../page.module.css";
 import WhoAmI from "./whoami"
-import Projects from "./projects"
 import Contact from "./contact"
+import { Projects, ProjectProps } from "./projects"
 
-export default function Links() {
+import styles from "../page.module.css";
+
+export default function Bi() {
     return (
         <>
             <div className={styles.bio}>

@@ -1,4 +1,5 @@
 import styles from "../page.module.css";
+import Myself from "../assets/myself.png";
 
 export default function QuickDescription() {
     return (
@@ -9,6 +10,7 @@ export default function QuickDescription() {
                     <h3 className={styles.additional}>an aspiring Software developer  & Cybersecurity researcher.</h3> 
                 </div>
                 <div className={styles.photo}>
+                    <img src={Myself.src}/>
                 </div>
             </div>
         </>

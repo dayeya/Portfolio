@@ -1,8 +1,8 @@
 .page {
   display: flex;
   justify-content: center;
-  min-height: 100svh;
-  padding: 5em 0;
+  min-height: 100vh;
+  padding: 3em;
 }
 
 .main {
@@ -18,17 +18,25 @@
 }
 
 .photo {
-  width: 9em;
-  height: 9em;
+  width: 10em;
+  height: 10em;
   background-color: var(--second-forground);
   border: 0.25em solid var(--main-foreground);
   border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .description {
   padding: 0;
   margin: 0;
-  font-size: 2.5em;
+  font-size: 2.5rem;
   font-family: var(--special-f);
   color: var(--main-foreground);
 }
@@ -36,7 +44,7 @@
 .additional {
   padding: 0;
   margin: 0;
-  font-size: 1.6em;
+  font-size: 1.6rem;
   font-weight: 400;
   font-family: var(--main-font);
   color: var(--main-foreground);
@@ -46,23 +54,20 @@
 .cv_button {
   cursor: pointer;
   appearance: none;
-  border-style: none;
-  position: relative;
-  touch-action: manipulation;
-  color: var(--main-foreground);
+  border: none;
   background-color: var(--second-forground);
-  border-radius: 2em;
+  color: var(--main-foreground);
   padding: 1em;
   font-weight: 600;
-  font-family: var(--main-font);
   font-size: 1rem;
+  border-radius: 2em;
+  font-family: var(--main-font);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.bamboo {
-  width: 2em;
-  height: 2em;
-  fill: var(--bamboo-color);
-  transform: rotate(-90deg);
+.cv_button:hover {
+  background-color: var(--main-foreground);
+  color: var(--second-forground);
 }
 
 .bio {
@@ -74,29 +79,132 @@
   color: var(--main-foreground);
   font-family: var(--special-f);
   font-weight: 600;
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .projects_con {
-  display: grid;
-  flex-direction: flex;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-bottom: 1em;
 }
 
 .project {
   display: flex;
   align-items: center;
-  gap: 1em;
+  justify-content: space-between;
+  gap: 0.5em;
+  max-width: 100%;
+  padding: 0.75em;
+  border-radius: 1em;
+  background: linear-gradient(to right,  var(--main-foreground) 50%,  var(--project-bg) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+}
+
+.project:hover {
+  background-position: left bottom;
+}
+
+.project:hover .name {
+  color: var(--background);
+}
+
+.project:hover .external path {
+  color: var(--background);
+  fill: var(--background);
 }
 
 .name {
+  font-weight: 500;
+  font-size: 1.3rem;
   color: var(--main-foreground);
-  font-family: var(--special-f);
-  font-size: 1.3em; 
+  font-family: var(--main-font);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.55s ease-in;
 }
 
 .text {
   color: var(--main-foreground);
   font-family: var(--main-font);
-  font-size: 1.2em;
-  padding: 0 0 0.5em 0;
+  font-size: 1.2rem;
+  padding-bottom: 0.5em;
+}
+
+.socials_text {
+  color: var(--main-foreground);
+  font-family: var(--main-font);
+  font-size: 1.2rem;
+}
+
+.social_links {
+  padding-top: 1.5em;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.social_links > li {
+  margin-right: 1em;
+}
+
+.social_links > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.external,
+.github,
+.linkedin,
+.email {
+  width: 1.6em;
+  height: 1.6em;
+}
+
+.github path,
+.linkedin path,
+.external path,
+.email path {
+  fill: var(--main-foreground);
+  transition: fill 0.55s ease-in;
+}
+
+.principle {
+  font-size: 1.2rem;
+  font-family: var(--special-f);
+  color: var(--main-foreground);
+  max-width: fit-content;
+  transition: opacity 0.5s ease-in-out; 
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .main_header {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .photo {
+    width: 8em;
+    height: 8em;
+  }
+
+  .description {
+    font-size: 2rem;
+  }
+
+  .additional {
+    font-size: 1.2rem;
+  }
 }
